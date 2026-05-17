@@ -1,114 +1,60 @@
-# GOMODE-DASHBORAD
-# GoMode COD Analytics Dashboard
+<h1 align="center">GOMODE — COD Logistics Analytics Dashboard</h1>
 
-## Internship Project
+<p align="center">
+  <em>Real-time Cash on Delivery performance monitoring: delivery rates, regional bottlenecks, and revenue loss from returns</em>
+</p>
 
-This repository contains an **end-to-end data analytics dashboard** developed as part of an **internship project**. The goal of the project is to analyze **Cash on Delivery (COD) logistics operations** and provide actionable insights to improve delivery performance, reduce returns, and optimize revenue collection.
-
-The application is built using **Python** and **Streamlit**, and it consumes real-time data from a logistics API.
-
----
-
-## Project Objectives
-
-* Monitor COD logistics performance in real time
-* Analyze delivery delays and operational bottlenecks
-* Measure success rate, return rate, and revenue impact
-* Identify high-risk areas (wilayas, hubs, customers)
-* Support decision-making with clear KPIs and visualizations
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white"/>
+</p>
 
 ---
+
+## Overview
+
+An end-to-end analytics dashboard for GOMODE's Cash on Delivery (COD) logistics operations, built during a data analytics internship. The dashboard connects to a live logistics API, processes parcel-level data, and surfaces actionable KPIs to reduce return rates, detect hub bottlenecks, and quantify revenue lost to failed deliveries.
 
 ## Features
 
-* 🔄 **Live API Integration** with pagination, rate limiting, and caching
-* 📊 **Interactive Dashboard** built with Streamlit
-* 📈 **Key Performance Indicators (KPIs)**
+- Live API integration with pagination, rate limiting, and exponential-backoff retry logic
+- Core KPIs: total orders, success rate, return rate, average processing and delivery time
+- Time analysis: processing time (creation → expedition) and shipping time (expedition → last status)
+- Geographical breakdown: orders, revenue, and cash collection rate by wilaya (region)
+- Hub bottleneck detection: slowest deliveries and high-delay hubs
+- Revenue analysis: successful COD revenue vs. revenue lost to returns
+- Risk profiling: high-return wilayas and a customer blacklist for frequent returners
+- Product analysis: most returned products and declared vs. actual value comparison
 
-  * Total orders
-  * Success rate
-  * Return rate
-  * Average processing and delivery time
-* ⏱️ **Time Analysis**
+## Tech Stack
 
-  * Processing time (creation → expedition)
-  * Shipping time (expedition → last status)
-* 📍 **Geographical Analysis**
+| Category | Tools |
+|----------|-------|
+| Language | Python 3 |
+| Dashboard | Streamlit |
+| Visualisation | Plotly |
+| Data Manipulation | pandas |
+| API Communication | requests |
 
-  * Orders and revenue by wilaya
-  * Cash collection rate by wilaya
-* 🚦 **Bottleneck Detection**
+## Getting Started
 
-  * Slowest deliveries
-  * Hubs with high delays
-* 💰 **Revenue Analysis**
+```bash
+git clone https://github.com/abderrahmane1463/GOMODE-DASHBORAD.git
+cd GOMODE-DASHBORAD
+pip install -r requirements.txt
+streamlit run fin.py
+```
 
-  * Successful COD revenue
-  * Lost revenue due to returns
-* 🚨 **Risk Analysis**
+> A valid GOMODE logistics API key is required. Store it as an environment variable before running.
 
-  * High-return areas
-  * Blacklist of customers with frequent returns
-* 📦 **Product Analysis**
+## Results / Key Insights
 
-  * Most returned products
-  * Price vs declared value comparison
-
----
-
-## Technologies Used
-
-* **Python 3**
-* **Streamlit** – dashboard and UI
-* **Pandas** – data manipulation
-* **Plotly** – interactive visualizations
-* **Requests** – API communication
+- Identified significant processing time gaps between order creation and expedition, enabling targeted SLA improvements
+- Revealed which wilayas concentrate the highest return rates, informing geographic risk-scoring for future orders
+- Quantified revenue leakage from returned parcels, providing a clear business case for proactive customer risk management
 
 ---
 
-## Data Source
-
-* Data is retrieved from a **private logistics API** (COD parcel data).
-* The dashboard includes:
-
-  * Secure API authentication
-  * Exponential backoff & retry logic
-  * Caching to reduce API load
-
-
-## Key Insights Provided
-
-* Identification of delays between order creation and expedition
-* Detection of inefficient delivery routes or hubs
-* Measurement of revenue losses caused by returned orders
-* Recognition of high-risk customers and regions
-* Support for operational and strategic decisions
-
----
-
-## Internship Context
-
-This project was developed as part of an **internship in data analysis / logistics analytics**. It demonstrates:
-
-* Practical use of Python for real-world data
-* API data handling and robustness
-* Data cleaning and feature engineering
-* KPI design and business-oriented analytics
-* Dashboard development and data storytelling
-
----
-
-## Author
-
-**Houssam Cherfaoui**
-Statistics & Data Science Student
-
----
-
-## Disclaimer
-
-This project is for **educational and analytical purposes only**. All sensitive or private information should be anonymized before public deployment.
-
----
-
-⭐ If you find this project interesting, feel free to star the repository!
+<p align="center">Made by <a href="https://github.com/abderrahmane1463">Cherfaoui Houssam Abderrahmane</a></p>
